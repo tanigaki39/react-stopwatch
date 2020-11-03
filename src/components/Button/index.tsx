@@ -3,11 +3,12 @@ import * as React from "react";
 //
 interface ButtonProps {
   isRunning?: boolean;
+  onClick: () => void;
 }
 //____________________________________________
 //
-const Component: React.FC<ButtonProps> = ({ isRunning }) => (
-  <button>{isRunning ? "STOP" : "START"}</button>
+const Component: React.FC<ButtonProps> = ({ isRunning, onClick }) => (
+  <button onClick={onClick}>{isRunning ? "STOP" : "START"}</button>
 );
 //____________________________________________
 //
