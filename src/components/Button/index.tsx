@@ -4,11 +4,14 @@ import * as React from "react";
 interface ButtonProps {
   label: string;
   onClick: () => void;
+  disabled?: boolean;
 }
 //____________________________________________
 //
-const Component: React.FC<ButtonProps> = ({ label, onClick }) => (
-  <button onClick={onClick}>{label}</button>
+const Component: React.FC<ButtonProps> = ({ label, onClick, disabled }) => (
+  <button onClick={onClick} disabled={disabled}>
+    {label}
+  </button>
 );
 //____________________________________________
 //

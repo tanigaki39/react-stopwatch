@@ -31,7 +31,7 @@ const Component: React.FC = () => {
         onClick={isRunning ? handleStop : handleStart}
         label={isRunning ? "STOP" : "START"}
       />
-      <Button onClick={handleClear} label="CLEAR" />
+      <Button onClick={handleClear} label="CLEAR" disabled={isRunning} />
     </div>
   );
 };
