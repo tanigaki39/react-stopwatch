@@ -25,7 +25,7 @@ const Component: React.FC = () => {
       <Viewer timer={timer} />
       <Button
         onClick={isRunning ? handleStop : handleStart}
-        isRunning={isRunning}
+        label={isRunning ? "STOP" : "START"}
       />
     </div>
   );
