@@ -20,6 +20,10 @@ const Component: React.FC = () => {
     clearInterval(timerRef.current);
   };
 
+  const handleClear = () => {
+    setTimer(0);
+  };
+
   return (
     <div>
       <Viewer timer={timer} />
@@ -27,6 +31,7 @@ const Component: React.FC = () => {
         onClick={isRunning ? handleStop : handleStart}
         label={isRunning ? "STOP" : "START"}
       />
+      <Button onClick={handleClear} label="CLEAR" />
     </div>
   );
 };
