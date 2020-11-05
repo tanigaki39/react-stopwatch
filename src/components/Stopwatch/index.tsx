@@ -1,6 +1,7 @@
 import * as React from "react";
 import Viewer from "../Viewer";
 import Button from "../Button";
+import styles from "./index.module.css";
 //____________________________________________
 //
 const Component: React.FC = () => {
@@ -25,13 +26,23 @@ const Component: React.FC = () => {
   };
 
   return (
-    <div>
-      <Viewer timer={timer} />
+    <div className={styles.root}>
       <Button
         onClick={isRunning ? handleStop : handleStart}
-        label={isRunning ? "STOP" : "START"}
+        className={styles.startButton}
       />
-      <Button onClick={handleClear} label="CLEAR" disabled={isRunning} />
+      <Button
+        onClick={handleClear}
+        disabled={isRunning}
+        className={styles.clearButton}
+      />
+      <div className={styles.inner}>
+        <div>STOPWATCH</div>
+        <div className={styles.display}>
+          <Viewer timer={timer} />
+        </div>
+        <div>TT-001</div>
+      </div>
     </div>
   );
 };

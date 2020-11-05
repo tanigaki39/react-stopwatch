@@ -12,13 +12,25 @@ const formatTime = (time: number) => {
   const seconds = `0${Math.floor(time / 100) % 60}`.slice(-2);
   const minutes = `0${Math.floor(time / 6000) % 60}`.slice(-2);
   const hours = `${Math.floor(time / 360000)}`;
-  return `${hours}:${minutes}:${seconds}:${milliseconds}`;
+  return (
+    <div>
+      <span className={styles.number}>{hours}</span>:
+      <span className={styles.number}>{minutes}</span>:
+      <span className={styles.number}>{seconds}</span>
+      <span className={styles.milliseconds}>{milliseconds}</span>
+    </div>
+  );
+  return [`${hours}:${minutes}:${seconds}`, `${milliseconds}`];
 };
 
 const Component: React.FC<CounterProps> = ({ timer }) => {
   return (
     <div className={styles.root}>
-      <div>{formatTime(timer)}</div>
+      {formatTime(timer)}
+      {/* <div>
+        {formatTime(timer)[0]}
+        <span className={styles.milliseconds}>{formatTime(timer)[1]}</span>
+      </div> */}
     </div>
   );
 };
