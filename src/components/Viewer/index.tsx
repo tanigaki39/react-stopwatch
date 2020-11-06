@@ -20,19 +20,10 @@ const formatTime = (time: number) => {
       <span className={styles.milliseconds}>{milliseconds}</span>
     </div>
   );
-  return [`${hours}:${minutes}:${seconds}`, `${milliseconds}`];
 };
 
 const Component: React.FC<CounterProps> = ({ timer }) => {
-  return (
-    <div className={styles.root}>
-      {formatTime(timer)}
-      {/* <div>
-        {formatTime(timer)[0]}
-        <span className={styles.milliseconds}>{formatTime(timer)[1]}</span>
-      </div> */}
-    </div>
-  );
+  return <div className={styles.root}>{formatTime(timer)}</div>;
 };
 //____________________________________________
 //
